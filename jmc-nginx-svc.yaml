@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: jmc-ngx-svc
+  labels:
+    app: app-jmc-ngx-svc
+spec:
+  type: nodePort
+  selector:
+    app: app-nginx
+  ports:
+    - port: 80
+      targetPort: 88
