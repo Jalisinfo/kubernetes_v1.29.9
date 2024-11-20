@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: resource-reader
+  namespace: default
+rules:
+- apiGroups: [""]
+  resources: ["*"]
+  verbs: ["get","list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jmc-resource-reader
+namespace: default
+subjects:
+- kind: User
+  name: jmc
+  apiGroups: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: resource-reader
+  apiGroups: rbac.authorization.k8s.io
+---
