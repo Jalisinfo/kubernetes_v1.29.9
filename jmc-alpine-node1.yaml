@@ -13,6 +13,7 @@ spec:
       labels:
         app: jmc-alpine-nd1
     spec:
+      nodeName: jmcusernode2
       containers:
       - image: alpine
         name: jmc-alp-con
