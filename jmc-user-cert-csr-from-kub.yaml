@@ -1,0 +1,12 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: jmc-user-csr
+spec:
+  request: <Your DER format of the based64 encoded CSR file>
+  signerName: kubernetes.io/kube-apiserver-client
+  expirationSeconds: 68400 # for a day long
+  usages:
+  - digital signature
+  - key encipherment
+  - client auth
