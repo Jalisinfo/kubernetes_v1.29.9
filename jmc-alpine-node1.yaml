@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+metadata:
+  name: alpine-node2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jmc-alpine-nd1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: jmc-alpine-nd1
+    spec:
+      containers:
+      - image: alpine
+        name: jmc-alp-con
+        ports:
+        - containerPort: 90
+        stdin: true
+        tty: true
