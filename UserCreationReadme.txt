@@ -86,7 +86,14 @@ cat jmc3.crt | base64 -w0  <- here w0 removes the line breaks.
 
 *** check the filename call - jmc-grant-permission.yaml
 
+10. create those role and its roleBinding objects.
 
+kubectl apply -f jmc-grant-permission.yaml
+
+===
+all should work as expected within the default namespace scope.
+
+END
 
 
 
