@@ -82,7 +82,7 @@ make sure encode the user key, crt, ca crt in base64:-
 
 cat jmc3.crt | base64 -w0  <- here w0 removes the line breaks.
 
-9. Create role, roleBinding, clusterRole and clusterRoleBinding for the user jmc to access the kubernetes resources/objects 
+9. Create role, roleBinding for the user jmc to access the kubernetes resources/objects 
 
 *** check the filename call - jmc-grant-permission.yaml
 
